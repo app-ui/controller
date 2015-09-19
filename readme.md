@@ -1,31 +1,21 @@
-# APP UI: Component
+# APP UI: Controls
 
-A bare minimum custom element for [APP UI](http://github.com/app-ui) using [VanillaJS](http://vanilla-js.com/).
+Display a UI element for on screen navigation.
 
-This is merely a template, designed to make it easy to get started creating a new APP UI element.
-
-
-## Examples
-
-* [Click to view](./examples/index.html)
+**Note:** This is a UI component to create on-screen controls (as in gamepad controls); not to be confused with a router/controller which is a logic construct in an MVC structure.
 
 
 ## Install
 
 Using bower:
 ```
-bower install app.ui.component
+bower install app.ui.controls
 ```
 
 Import from github
 ```
-git pull git://github.com/app-ui/component.git master
+git pull git://github.com/app-ui/controls.git master
 ```
-
-Simply search and replace ```component``` and ```Component``` with your UI element name.
-
-The component contains all the basic structure to get started. The stylesheet is created using Less and then been compiled to a plain CSS file. It's your choice if you want to continue developing in Less or CSS.
-
 
 
 ## Usage
@@ -33,18 +23,18 @@ The component contains all the basic structure to get started. The stylesheet is
 1. Import Web Components' polyfill
 
 ```html
-<script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+<script src="components/webcomponentsjs/webcomponents.js"></script>
 ```
 
 2. Import Custom Element:
 ```html
-<link rel="import" href="bower_components/app.ui.component">
+<link rel="import" href="components/app.ui.controls">
 ```
 
 3. Start using it!
 
 ```html
-<ui-component></ui-component>
+<ui-controls></ui-controls>
 ```
 
 
@@ -58,6 +48,16 @@ The component contains all the basic structure to get started. The stylesheet is
 ...
 
 
-## License
+## Credits
+
+Initiated by Makis Tracend ( [@tracend](http://github.com/tracend) )
+
+Distributed through [Makesites.org](http://makesites.org/)
+
+### Mentions
+
+Part of the [APP UI](http://github.com/app-ui) components.
+
+### License
 
 Released under the [MIT License](http://makesites.org/licenses/MIT)
