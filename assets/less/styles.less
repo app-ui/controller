@@ -1,0 +1,197 @@
+/* replace with component less */
+
+ui-controls, ui-controls::shadow {
+
+/* misc */
+.settings:before {
+	content: "\2699"; /* &#9881; */
+}
+.edit:before {
+	content: "\270E"; /* &#9998; */
+}
+.tick:before {
+	content: "\E007"; /* &#57351; */
+}
+.close:before {
+	content: "\E4F9"; /* &#58617; */
+}
+.help:before {
+	content: "\E020"; /* &#57376; */
+}
+.caution:before {
+	content: "\E01F"; /* &#57375; */
+}
+.settings2:before {
+	content: "\E02F"; /* &#57391; */
+}
+.exec:before {
+	content: "\E031"; /* &#57393; */
+}
+
+/* arrows01 */
+.arrows-01 {
+	.left:before {
+		content: "\E312"; /* &#58130; */
+	}
+	.right:before {
+		content: "\E313"; /* &#58131; */
+	}
+	.up:before {
+		content: "\E314"; /* &#58132; */
+	}
+	.down:before {
+		content: "\E315"; /* &#58133; */
+	}
+}
+
+/* arrows02 */
+.arrows-02 {
+	.left:before {
+		content: "\E49D"; /* &#58525; */
+	}
+	.right:before {
+		content: "\E49E"; /* &#58526; */
+	}
+	.up:before {
+		content: "\E49F"; /* &#58527; */
+	}
+	.down:before {
+		content: "\E4A0"; /* &#58528; */
+	}
+}
+/* arrows03 */
+.arrows-03 {
+	.left:before {
+		content: "\E025"; /* &#57381; */
+	}
+	.right:before {
+		content: "\E026"; /* &#57382; */
+	}
+	.up:before {
+		content: "\E027"; /* &#57383; */
+	}
+	.down:before {
+		content: "\E028"; /* &#57384; */
+	}
+}
+/* arrows04 */
+.arrows-04 {
+	.left:before {
+		content: "\E02B"; /* &#57387; */
+	}
+	.right:before {
+		content: "\E02C"; /* &#57388; */
+	}
+	.up:before {
+		content: "\E02D"; /* &#57389; */
+	}
+	.down:before {
+		content: "\E02E"; /* &#57390; */
+	}
+}
+
+/* common */
+.arrows, .buttons {
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	width: 280px;
+	height: 220px;
+
+	li {
+		display: block;
+		position: absolute;
+		background-color: rgba(69, 69, 69, 0.8);
+		border: solid 1px #999;
+		border-radius: 50%;
+		margin: 3px;
+		padding: 24px;
+		color: #ccc;
+		font-size: 48px;
+		line-height: 48px;
+		cursor: pointer;
+
+		-webkit-user-select: none;  /* Chrome all / Safari all */
+		-moz-user-select: none;     /* Firefox all */
+		-ms-user-select: none;      /* IE 10+ */
+		user-select: none;
+
+		&:before {
+			color: #ccc;
+			text-align: center;
+			font-size: 48px;
+			line-height: 48px;
+		}
+
+		&:hover {
+			background-color: rgba(120, 120, 120, 0.8);
+		}
+	}
+
+	.left {
+		left: 0;
+		top: 48px;
+	}
+	.right {
+		right:0;
+		top: 48px;
+	}
+	.up {
+		top:0;
+		left: 92px;
+	}
+	.down {
+		bottom:0;
+		left: 92px;
+	}
+}
+
+/* positioning main sections */
+.analog {
+	float: left;
+	margin-top: 50px;
+	margin-left: 20px;
+}
+.arrows {
+	float: left;
+	margin-left: 80px;
+}
+.buttons {
+	margin-left: 500px;
+}
+
+/* analog */
+
+.analog {
+	width: 100px;
+	height: 100px;
+}
+
+.analog:before {
+	content: "\E469"; /* &#58473; */
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	font-size: 120px;
+	line-height: 100px;
+	color: rgba(69, 69, 69, 0.8);
+}
+.analog:after {
+	content: "\E008"; /* &#57352 */
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	font-size: 120px;
+	line-height: 100px;
+	color: rgba(100, 100, 100, 1);
+	/*
+	margin-top: attr(data-y);
+	margin-left: attr(data-x);
+	*/
+}
+
+}

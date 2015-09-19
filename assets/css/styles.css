@@ -1,0 +1,258 @@
+/* replace with component less */
+ui-controls,
+ui-controls::shadow {
+  /* misc */
+  /* arrows01 */
+  /* arrows02 */
+  /* arrows03 */
+  /* arrows04 */
+  /* common */
+  /* positioning main sections */
+  /* analog */
+}
+ui-controls .settings:before,
+ui-controls::shadow .settings:before {
+  content: "\2699";
+  /* &#9881; */
+}
+ui-controls .edit:before,
+ui-controls::shadow .edit:before {
+  content: "\270E";
+  /* &#9998; */
+}
+ui-controls .tick:before,
+ui-controls::shadow .tick:before {
+  content: "\E007";
+  /* &#57351; */
+}
+ui-controls .close:before,
+ui-controls::shadow .close:before {
+  content: "\E4F9";
+  /* &#58617; */
+}
+ui-controls .help:before,
+ui-controls::shadow .help:before {
+  content: "\E020";
+  /* &#57376; */
+}
+ui-controls .caution:before,
+ui-controls::shadow .caution:before {
+  content: "\E01F";
+  /* &#57375; */
+}
+ui-controls .settings2:before,
+ui-controls::shadow .settings2:before {
+  content: "\E02F";
+  /* &#57391; */
+}
+ui-controls .exec:before,
+ui-controls::shadow .exec:before {
+  content: "\E031";
+  /* &#57393; */
+}
+ui-controls .arrows-01 .left:before,
+ui-controls::shadow .arrows-01 .left:before {
+  content: "\E312";
+  /* &#58130; */
+}
+ui-controls .arrows-01 .right:before,
+ui-controls::shadow .arrows-01 .right:before {
+  content: "\E313";
+  /* &#58131; */
+}
+ui-controls .arrows-01 .up:before,
+ui-controls::shadow .arrows-01 .up:before {
+  content: "\E314";
+  /* &#58132; */
+}
+ui-controls .arrows-01 .down:before,
+ui-controls::shadow .arrows-01 .down:before {
+  content: "\E315";
+  /* &#58133; */
+}
+ui-controls .arrows-02 .left:before,
+ui-controls::shadow .arrows-02 .left:before {
+  content: "\E49D";
+  /* &#58525; */
+}
+ui-controls .arrows-02 .right:before,
+ui-controls::shadow .arrows-02 .right:before {
+  content: "\E49E";
+  /* &#58526; */
+}
+ui-controls .arrows-02 .up:before,
+ui-controls::shadow .arrows-02 .up:before {
+  content: "\E49F";
+  /* &#58527; */
+}
+ui-controls .arrows-02 .down:before,
+ui-controls::shadow .arrows-02 .down:before {
+  content: "\E4A0";
+  /* &#58528; */
+}
+ui-controls .arrows-03 .left:before,
+ui-controls::shadow .arrows-03 .left:before {
+  content: "\E025";
+  /* &#57381; */
+}
+ui-controls .arrows-03 .right:before,
+ui-controls::shadow .arrows-03 .right:before {
+  content: "\E026";
+  /* &#57382; */
+}
+ui-controls .arrows-03 .up:before,
+ui-controls::shadow .arrows-03 .up:before {
+  content: "\E027";
+  /* &#57383; */
+}
+ui-controls .arrows-03 .down:before,
+ui-controls::shadow .arrows-03 .down:before {
+  content: "\E028";
+  /* &#57384; */
+}
+ui-controls .arrows-04 .left:before,
+ui-controls::shadow .arrows-04 .left:before {
+  content: "\E02B";
+  /* &#57387; */
+}
+ui-controls .arrows-04 .right:before,
+ui-controls::shadow .arrows-04 .right:before {
+  content: "\E02C";
+  /* &#57388; */
+}
+ui-controls .arrows-04 .up:before,
+ui-controls::shadow .arrows-04 .up:before {
+  content: "\E02D";
+  /* &#57389; */
+}
+ui-controls .arrows-04 .down:before,
+ui-controls::shadow .arrows-04 .down:before {
+  content: "\E02E";
+  /* &#57390; */
+}
+ui-controls .arrows,
+ui-controls::shadow .arrows,
+ui-controls .buttons,
+ui-controls::shadow .buttons {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: 280px;
+  height: 220px;
+}
+ui-controls .arrows li,
+ui-controls::shadow .arrows li,
+ui-controls .buttons li,
+ui-controls::shadow .buttons li {
+  display: block;
+  position: absolute;
+  background-color: rgba(69, 69, 69, 0.8);
+  border: solid 1px #999;
+  border-radius: 50%;
+  margin: 3px;
+  padding: 24px;
+  color: #ccc;
+  font-size: 48px;
+  line-height: 48px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+}
+ui-controls .arrows li:before,
+ui-controls::shadow .arrows li:before,
+ui-controls .buttons li:before,
+ui-controls::shadow .buttons li:before {
+  color: #ccc;
+  text-align: center;
+  font-size: 48px;
+  line-height: 48px;
+}
+ui-controls .arrows li:hover,
+ui-controls::shadow .arrows li:hover,
+ui-controls .buttons li:hover,
+ui-controls::shadow .buttons li:hover {
+  background-color: rgba(120, 120, 120, 0.8);
+}
+ui-controls .arrows .left,
+ui-controls::shadow .arrows .left,
+ui-controls .buttons .left,
+ui-controls::shadow .buttons .left {
+  left: 0;
+  top: 48px;
+}
+ui-controls .arrows .right,
+ui-controls::shadow .arrows .right,
+ui-controls .buttons .right,
+ui-controls::shadow .buttons .right {
+  right: 0;
+  top: 48px;
+}
+ui-controls .arrows .up,
+ui-controls::shadow .arrows .up,
+ui-controls .buttons .up,
+ui-controls::shadow .buttons .up {
+  top: 0;
+  left: 92px;
+}
+ui-controls .arrows .down,
+ui-controls::shadow .arrows .down,
+ui-controls .buttons .down,
+ui-controls::shadow .buttons .down {
+  bottom: 0;
+  left: 92px;
+}
+ui-controls .analog,
+ui-controls::shadow .analog {
+  float: left;
+  margin-top: 50px;
+  margin-left: 20px;
+}
+ui-controls .arrows,
+ui-controls::shadow .arrows {
+  float: left;
+  margin-left: 80px;
+}
+ui-controls .buttons,
+ui-controls::shadow .buttons {
+  margin-left: 500px;
+}
+ui-controls .analog,
+ui-controls::shadow .analog {
+  width: 100px;
+  height: 100px;
+}
+ui-controls .analog:before,
+ui-controls::shadow .analog:before {
+  content: "\E469";
+  /* &#58473; */
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  font-size: 120px;
+  line-height: 100px;
+  color: rgba(69, 69, 69, 0.8);
+}
+ui-controls .analog:after,
+ui-controls::shadow .analog:after {
+  content: "\E008";
+  /* &#57352 */
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  font-size: 120px;
+  line-height: 100px;
+  color: #646464;
+  /*
+	margin-top: attr(data-y);
+	margin-left: attr(data-x);
+	*/
+}
