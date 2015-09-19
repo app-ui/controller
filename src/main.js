@@ -6,11 +6,15 @@
 	el.createdCallback = function() {
 
 		// gather options
-		var options = {};
+		var options = {
+			monitor: ["mouse"]
+		};
 		// ...
-		options.el = this;
+		// shadowroot option
+		var hidden = false;
+		options.el = ( hidden ) ? this.createShadowRoot() : this;
 		// instantiate view
-		this.view = new APP.UI.Component( options );
+		this.view = new APP.UI.Controls( options );
 
 	};
 
@@ -25,7 +29,8 @@
 	// Fires when an attribute was added, removed, or updated
 	el.attributeChangedCallback = function(attr, oldVal, newVal) {};
 
-	document.registerElement('ui-component', {
+	document.registerElement('ui-controls', {
 		prototype: el
 	});
+
 }());
