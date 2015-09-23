@@ -15,8 +15,8 @@
 			monitor: ["mouse"]
 		};
 		// ...
-		// shadowroot option
-		var hidden = true;
+		// shadowroot option (resolve issues before exposing as option...)
+		var hidden = false;
 		options.el = ( hidden ) ? this.createShadowRoot() : this;
 		// instantiate view
 		this.view = new APP.UI.Controls( options );
