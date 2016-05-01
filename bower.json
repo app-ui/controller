@@ -1,0 +1,23 @@
+{
+	"name": "app.ui.controls",
+	"version": "0.1.0",
+	"description": "APP UI: Controls",
+	"license": "MIT",
+	"main": "index.html",
+	"keywords": [
+			"app-ui", "web-components"
+	],
+	"ignore": [
+			"**/.*",
+			"components",
+			"node_modules",
+			"bower_components"
+	],
+	"dependencies": {
+		"app": "*",
+		"app.input.mouse": "*",
+		"app.input.touch": "*",
+		"jquery.pseudo": "*",
+		"webcomponentsjs": "*"
+	}
+}
