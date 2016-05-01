@@ -43,6 +43,7 @@ git pull git://github.com/app-ui/controls.git master
 Following are the attributes you can use with this custom element
 
 * **opacity** (0-1) : how transparent are the controls
+* **type** (kiost,gamepad) : define the controls layout
 
 
 ## Events

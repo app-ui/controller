@@ -13,8 +13,10 @@
 		// gather options
 		var self = this;
 		var opacity = this.getAttribute("opacity") || "1";
+		var type = this.getAttribute("type") || "kiosk";
 		var options = {
 			monitor: ["mouse"],
+			url: "../assets/html/"+ type +".html",
 			style: {
 				opacity: opacity
 			}
