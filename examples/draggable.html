@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+	<title>Static Slideshow</title>
+
+	<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	html, body {
+		width: 100%;
+		height: 100%;
+	}
+
+	.analog {
+		width: 100px;
+		height: 100px;
+		margin: 0 auto;
+		margin-top: 100px;
+	}
+
+	.analog:before {
+		content: "\E469"; /* &#58473; */
+		position: absolute;
+		width: 100px;
+		height: 100px;
+		text-align: center;
+		font-size: 120px;
+		line-height: 100px;
+	}
+	.analog:after {
+		content: "\E008"; /* &#57352 */
+		position: absolute;
+		width: 100px;
+		height: 100px;
+		text-align: center;
+		font-size: 120px;
+		line-height: 100px;
+		/*
+		margin-top: attr(data-y);
+		margin-left: attr(data-x);
+		*/
+	}
+
+	</style>
+</head>
+<body>
+
+	<div class="analog"></div>
+
+
+<!-- Dependencies -->
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/json3/3.2.4/json3.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+
+<!-- Dependencies -->
+<script type="text/javascript" src="//rawgit.com/makesites/jquery-pseudo/master/jquery.pseudo.js"></script>
+<!-- script type="text/javascript" src="http://rawgit.com/backbone-input/touch/master/build/backbone.input.touch.js"></script -->
+<script type="text/javascript" src="http://rawgit.com/backbone-input/mouse/master/build/backbone.input.mouse.js"></script>
+
+<!-- Extension lib -->
+
+<script type="text/javascript">
+
+	var View = Backbone.View.extend({
+			el : ".analog",
+
+			/*mouse: ["down", "move", "up"],*/
+			mousemove: function( e ){
+				// prerequisites
+				if( !this.state.get("pressing") ) return;
+				// variables
+				var el = this.$el[0];
+				var mouse = this.params.get("mouse");
+				var pos = {
+					x: mouse.x - el.offsetLeft,
+					y: mouse.y - el.offsetTop
+				};
+				var size = {
+					width: el.offsetWidth,
+					height: el.offsetHeight
+				};
+				// normalize axis (based on center)
+				// set bounderies
+				var axis = {
+					x: pos.x - (size.width/2),
+					y: pos.y - (size.height/2)
+				}
+				// set bounderies
+				axis.x = Math.max( axis.x, -size.width/2);
+				axis.x = Math.min( axis.x, size.width/2);
+				axis.y = Math.max( axis.y, -size.height/2);
+				axis.y = Math.min( axis.y, size.height/2);
+				// position the after element
+				this.$el.pseudo("after", "margin-top", axis.y +"px");
+				this.$el.pseudo("after", "margin-left", axis.x +"px");
+				//
+				// save the value in the params (as a percentage)
+				this.params.set("analog", { x: axis.x/(size.width/2), y: axis.x/(size.height/2) });
+			},
+
+			mouseout: function(){
+				// stop "pressing" outside the container
+				this.state.set("hover", true);
+			}
+	});
+	// LOGIC
+	var view = new View( {
+		monitor: ["mouse"]
+	});
+
+	view.render();
+
+</script>
+
+
+</body>
+</html>
