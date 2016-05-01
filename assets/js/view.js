@@ -13,17 +13,20 @@
 		url: "../assets/html/template.html",
 
 		events: {
-			//"click .arrows li": "clickArrow",
-			//"click .buttons li": "clickButton",
-			//"mousemove .analog": "moveAnalog"
+			"click .arrows li": "clickArrow",
+			"click .buttons li": "clickButton",
+			"mousemove .analog": "moveAnalog"
 		},
 
+		/*
 		initialize: function( options ){
 			//console.log("options", options);
 			this._bindEvents();
 			return APP.View.prototype.initialize.call(this, options);
 		},
+		*/
 
+		/*
 		// move these event methods to backbone app
 		_bindEvents: function(){
 			var self = this;
@@ -63,36 +66,40 @@
 			// condition re-render...
 			//console.log( "move", e);
 		},
-
+		*/
 		update: function(){
 			// condition re-render...
 		},
-
+		/*
 		postRender:function(){
-			console.log( this.params.get("rendered") );
-			if( this.params.get("rendered") ) return;
+			//if( this.params.get("rendered") ) return;
 			// events (execute once)
-			console.log("postRenderss");
-			$(this.el).find(".arrows li").on("click", _.bind(this.clickArrow, this));
-			$(this.el).find(".buttons li").on("click", _.bind(this.clickButton, this));
-			$(this.el).find(".analog").on("mousemove", _.bind(this.moveAnalog, this));
+			// reset events
+			$(this.el).find(".arrows li").off("click").on("click", _.bind(this.clickArrow, this));
+			$(this.el).find(".buttons li").off("click").on("click", _.bind(this.clickButton, this));
+			$(this.el).find(".analog").off("mousemove").on("mousemove", _.bind(this.moveAnalog, this));
 			//
-			this.params.set("rendered", true);
+			//this.params.set("rendered", true);
 		},
-
+		*/
 		// events
 		clickArrow: function( e ){
 			console.log("click arrow!!");
 			// find arrow
+
+			// broadcast event
 		},
 
 		clickButton: function( e ){
 			console.log("click button!!");
 			// find arrow
+
+			// broadcast event
+
 		},
 
 		moveAnalog: function( e ){
-			console.log("moveAnalog", e);
+			//console.log("moveAnalog", e);
 			// prerequisites
 			if( !this.state.get("pressing") ) return;
 			// variables
@@ -122,8 +129,16 @@
 			$(el).pseudo("after", "margin-left", axis.x +"px");
 			//
 			// save the value in the params (as a percentage)
-			this.params.set("analog", { x: axis.x/(size.width/2), y: axis.x/(size.height/2) });
-
+			var force = { x: axis.x/(size.width/2), y: axis.x/(size.height/2) };
+			this.params.set("analog", force);
+			// tba: multiple analog
+			// trigger event
+			//this.trigger("analog", { id: 1, coords: coords });
+			// events
+			//this.view.on('analog', function(data){
+				var event = new CustomEvent('analog', { detail: { id: 1, force: force }});
+				this.el.dispatchEvent(event);
+			//});
 		}
 	});
 
