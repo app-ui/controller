@@ -10,7 +10,7 @@
 			silentRender: true, // this is required to avoid an infinite loop (triggering createdCallback on .show() )
 		},
 
-		url: "../assets/html/template.html",
+		url: "../assets/html/kiosk.html",
 
 		events: {
 			"click .arrows li": "clickArrow",
@@ -86,18 +86,21 @@
 
 		// events
 		clickArrow: function( e ){
-			console.log("click arrow!!");
+			//console.log("click arrow!!");
 			// find arrow
-
+			var value = $(e.target).attr('data-value');
 			// broadcast event
+			var event = new CustomEvent('arrows', { detail: { direction: value }});
+			this.el.dispatchEvent(event);
 		},
 
 		clickButton: function( e ){
-			console.log("click button!!");
+			//console.log("click button!!");
 			// find arrow
-
+			var value = $(e.target).attr('data-value');
 			// broadcast event
-
+			var event = new CustomEvent('buttons', { detail: { value: value }});
+			this.el.dispatchEvent(event);
 		},
 
 		moveAnalog: function( e ){
