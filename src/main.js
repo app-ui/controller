@@ -11,8 +11,13 @@
 	el.attachedCallback = function() {
 
 		// gather options
+		var self = this;
+		var opacity = this.getAttribute("opacity") || "1";
 		var options = {
-			monitor: ["mouse"]
+			monitor: ["mouse"],
+			style: {
+				opacity: opacity
+			}
 		};
 		// ...
 		// shadowroot option (resolve issues before exposing as option...)

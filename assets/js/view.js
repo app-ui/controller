@@ -70,18 +70,20 @@
 		update: function(){
 			// condition re-render...
 		},
-		/*
+
 		postRender:function(){
+			// set opacity
+			$(this.el).find('.controls').css("opacity", this.options.style.opacity);
 			//if( this.params.get("rendered") ) return;
 			// events (execute once)
 			// reset events
-			$(this.el).find(".arrows li").off("click").on("click", _.bind(this.clickArrow, this));
-			$(this.el).find(".buttons li").off("click").on("click", _.bind(this.clickButton, this));
-			$(this.el).find(".analog").off("mousemove").on("mousemove", _.bind(this.moveAnalog, this));
+			//$(this.el).find(".arrows li").off("click").on("click", _.bind(this.clickArrow, this));
+			//$(this.el).find(".buttons li").off("click").on("click", _.bind(this.clickButton, this));
+			//$(this.el).find(".analog").off("mousemove").on("mousemove", _.bind(this.moveAnalog, this));
 			//
 			//this.params.set("rendered", true);
 		},
-		*/
+
 		// events
 		clickArrow: function( e ){
 			console.log("click arrow!!");
