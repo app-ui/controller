@@ -5,42 +5,62 @@ Display a UI element for on screen navigation.
 **Note:** This is a UI component to create on-screen controls (as in gamepad controls); not to be confused with a router/controller which is a logic construct in an MVC structure.
 
 
+## Examples
+
+...
+
+
+## Dependencies
+
+This component relies on the following third-party libraries:
+
+* [APP](http://makesites.org/projects/app)
+* [jQuery](http://jquery.com)
+* [Underscore](http://underscorejs.org)
+
+
 ## Install
 
-Using bower:
+Download the component and extract in 'components/app-ui-controls'
 ```
-bower install app.ui.controls
+cd [project folder]
+wget https://github.com/app-ui/controls/archive/master.zip
+unzip master.zip -d ./components/
 ```
 
-Import from github
+Using bower: (Old method)
 ```
-git pull git://github.com/app-ui/controls.git master
+bower install app.ui.controls
 ```
 
 
 ## Usage
 
-1. Import Web Components' polyfill
+The component is built on top of [APP](http://makesites.org/projects/app) which should be loaded before the component in the <head> section of your website. This library uses the non-standard method of "html imports" for loading custom elements. 
+
+
+1. Include APP library
 
 ```html
-<script src="components/webcomponentsjs/webcomponents.js"></script>
+<script src="components/app/build/app.min.js"></script>
 ```
 
 2. Import Custom Element:
 ```html
-<link rel="import" href="components/app.ui.controls">
+<link rel="import" href="components/app-ui-controls">
 ```
 
 3. Start using it!
 
 ```html
-<ui-controls></ui-controls>
+<div is="app-ui-controls"></div>
 ```
+Currently the component extends the ```<div>``` tag.
 
 
 ## Options
 
-Following are the attributes you can use with this custom element
+These are the set of options you can use as attributes in your custom element:
 
 * **opacity** (0-1) : how transparent are the controls
 * **type** (kiost,gamepad) : define the controls layout
@@ -57,10 +77,9 @@ Initiated by Makis Tracend ( [@tracend](http://github.com/tracend) )
 
 Distributed through [Makesites.org](http://makesites.org/)
 
-### Mentions
-
-Part of the [APP UI](http://github.com/app-ui) components.
 
 ### License
 
 Released under the [MIT License](http://makesites.org/licenses/MIT)
+
+
